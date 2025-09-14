@@ -113,7 +113,8 @@ h1{
   transition: transform .25s ease, border-color .25s ease;
 }
 .project:hover{ transform: translateY(-4px); border-color:#2f2f4a }
-.project .thumb{ aspect-ratio: 16/9; background:linear-gradient(90deg, rgba(103,232,249,.15), rgba(167,139,250,.15)); }
+.project .thumb{ aspect-ratio: 16/9; background:linear-gradient(90deg, rgba(103,232,249,.15), rgba(167,139,250,.15)); display: grid; place-items: center; overflow: hidden; }
+.project .thumb img{ max-width: 100%; max-height: 100%; }
 .project .body{ padding:14px 14px 18px 14px }
 .project .title{ margin:0 0 6px 0; font-size:20px }
 .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
@@ -144,10 +145,57 @@ input, textarea{
   padding:12px 14px; border-radius:12px; outline:none; font-size:16px;
 }
 textarea{ min-height:140px; resize: vertical }
-.socials{ display:flex; gap:12px; margin-top:12px }
+.socials{ display:flex; gap:12px; }
 .socials a{
   width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
   border:1px solid var(--border); color:var(--text); text-decoration:none;
   background: var(--card); transition: transform .2s ease, border-color .2s ease;
 }
 .socials a:hover{ transform: translateY(-2px); border-color:#2f2f4a }
+
+/* Contact page layout */
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1.2fr auto;
+  gap: 28px;
+  align-items: start;
+  grid-template-areas:
+    "title image"
+    "lead  image"
+    "form  image"
+    "socials image";
+}
+.contact-grid h2 { grid-area: title; }
+.contact-grid .section-lead { grid-area: lead; }
+.contact-grid form { grid-area: form; }
+.contact-grid .contact-pic { grid-area: image; align-self: center; }
+.contact-grid .socials { grid-area: socials; }
+
+/* Larger circular photo that keeps the face centered */
+.contact-pic{
+  width: clamp(240px, 30vw, 350px);   /* bigger */
+  aspect-ratio: 1 / 1;                /* perfect circle */
+  border-radius: 50%;
+  object-fit: cover;                   /* fill the circle */
+  object-position: 50% 20%;            /* bias upward to avoid cutting the chin/forehead */
+  box-shadow: 0 0 0 8px #ffffff;       /* clean white ring */
+  background:#fff;                     /* ensures the ring is solid */
+  display:block;
+}
+
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+    gap:22px;
+    grid-template-areas:
+      "image"
+      "title"
+      "lead"
+      "form"
+      "socials";
+  }
+  .contact-pic{
+    margin-inline:auto;                /* center on small screens */
+    width: clamp(220px, 55vw, 340px);
+  }
+}
