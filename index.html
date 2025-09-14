@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saif Portfolio</title>
+  <meta name="description" content="Saif Jilani — developer portfolio">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Saif logo" class="logo">
+        </a>
+        <ul class="navlinks">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container inner">
+        <div class="reveal">
+          <h1>Building useful things with code</h1>
+          <p class="lead">I am Saif Jilani, a developer focused on web, data, and smart tools. This space shows a sample of my work and how I think when solving problems.</p>
+          <div style="display:flex; gap:12px">
+            <a class="btn" href="projects.html">See projects</a>
+            <a class="btn secondary" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+        <div class="reveal fade-right">
+          <img src="assets/logo.png" alt="Logo" style="width:100%; max-width:420px; display:block; margin:auto; filter: drop-shadow(0 0 12px rgba(103,232,249,.35));">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">What I focus on</h2>
+        <p class="section-lead reveal">Clean architecture, performance, and delightful user experience.</p>
+        <div class="cards">
+          <div class="card reveal">
+            <h3>Frontend</h3>
+            <p>Accessible, responsive interfaces with modern JavaScript, CSS, and Web APIs.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Backend</h3>
+            <p>APIs and automation scripts in Python or Node. Data handling and integrations.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Quality</h3>
+            <p>Testing and metrics. Small details add up to a fast and reliable experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Saif Jilani</span>
+      <span>Built with HTML CSS JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
