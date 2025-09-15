@@ -10,16 +10,53 @@ const io = new IntersectionObserver((entries)=>{
 
 document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
-// Contact form handler (mailto fallback)
-const form = document.querySelector('form');
-if(form){
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const name = form.querySelector('input[name="name"]').value.trim();
-    const email = form.querySelector('input[name="email"]').value.trim();
-    const msg = form.querySelector('textarea[name="message"]').value.trim();
-    const subject = encodeURIComponent(`Hello from ${name}`);
-    const body = encodeURIComponent(`${msg}\n\nFrom: ${name} <${email}>`);
-    window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+// Contact form validation
+const form = document.getElementById('contact-form');
+
+if (form) {
+  form.addEventListener('submit', function(event) {
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const messageInput = form.querySelector('textarea[name="message"]');
+
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+
+    let isValid = true;
+
+    // Reset errors
+    nameError.textContent = '';
+    nameError.style.display = 'none';
+    emailError.textContent = '';
+    emailError.style.display = 'none';
+    messageError.textContent = '';
+    messageError.style.display = 'none';
+
+    // Name validation
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Please enter your name.';
+      nameError.style.display = 'block';
+      isValid = false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value.trim())) {
+      emailError.textContent = 'Please enter a valid email address.';
+      emailError.style.display = 'block';
+      isValid = false;
+    }
+
+    // Message validation
+    if (messageInput.value.trim() === '') {
+      messageError.textContent = 'Please enter a message.';
+      messageError.style.display = 'block';
+      isValid = false;
+    }
+
+    if (!isValid) {
+      event.preventDefault();
+    }
   });
 }

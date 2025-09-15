@@ -30,10 +30,13 @@
           <h2 class="reveal">Say hello</h2>
           <p class="section-lead reveal">I am open to interesting work and collaboration. Send a note and I will reply soon.</p>
 
-          <form class="reveal" id="contact-form">
+          <form class="reveal" id="contact-form" action="https://formspree.io/f/xdklvagd" method="POST" novalidate>
             <input name="name" type="text" placeholder="Your name" required />
+            <span class="error-message" id="name-error"></span>
             <input name="email" type="email" placeholder="Your email" required />
+            <span class="error-message" id="email-error"></span>
             <textarea name="message" placeholder="Your message" required></textarea>
+            <span class="error-message" id="message-error"></span>
             <button class="btn" type="submit">Send</button>
           </form>
 

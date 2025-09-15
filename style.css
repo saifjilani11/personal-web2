@@ -228,3 +228,11 @@ textarea{ min-height:140px; resize: vertical }
     width: clamp(220px, 55vw, 340px);
   }
 }
+
+.error-message {
+  color: var(--accent-2);
+  font-size: 14px;
+  margin-top: -4px;
+  margin-bottom: 8px;
+  display: none; /* Hidden by default */
+}
