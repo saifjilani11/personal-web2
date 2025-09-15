@@ -32,13 +32,14 @@
           <p class="section-lead reveal">I am open to interesting work and collaboration. Send a note and I will reply
             soon.</p>
 
-          <form class="reveal" id="contact-form" action="https://formspree.io/f/xdklvagd" method="POST" novalidate>
+          <form class="reveal" id="contact-form" action="https://formspree.io/f/xdklvagd" method="POST">
             <input name="name" type="text" placeholder="Your name" required />
             <span class="error-message" id="name-error"></span>
             <input name="email" type="email" placeholder="Your email" required />
             <span class="error-message" id="email-error"></span>
             <div class="phone-input-container">
-              <select name="country_code" aria-label="Country Code">
+              <select name="country_code" aria-label="Country Code" required>
+                <option value="" disabled selected hidden>Select country code</option>
                 <option value="+93">Afghanistan (+93)</option>
                 <option value="+355">Albania (+355)</option>
                 <option value="+213">Algeria (+213)</option>
