@@ -82,11 +82,19 @@ h1{
 .section h2{ font-size: clamp(24px, 3.2vw, 36px); margin:0 0 12px 0}
 .section p.section-lead{ color:var(--muted); margin-top:0 }
 
-.cards{
-  display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 per row */
+  gap: 16px;
 }
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
+}
+
 @media (max-width: 900px){ .cards{ grid-template-columns: 1fr 1fr } }
-@media (max-width: 640px){ .cards{ grid-template-columns: 1fr } }
 
 .card{
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
