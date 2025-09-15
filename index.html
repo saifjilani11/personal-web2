@@ -8,6 +8,8 @@
   <meta name="description" content="Digital Solutions & Business Innovation">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/Saif_Logo.jpeg">
+  <!-- LottieFiles player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
@@ -40,44 +42,50 @@
             <a class="btn secondary" href="/contact/">Get in touch</a>
           </div>
         </div>
-        <div class="reveal fade-right">
-          <img src="assets/logo.png" alt="Logo"
-            style="width:100%; max-width:420px; display:block; margin:auto; filter: drop-shadow(0 0 12px rgba(103,232,249,.35));">
+
+<!-- Right column: Lottie animation instead of logo -->
+<div class="reveal fade-right" style="display:flex; justify-content:center; align-items:center;">
+  <lottie-player
+    src="assets/Web Development.json"
+    background="transparent"
+    speed="1"
+    style="width:100%; max-width:420px; margin:auto;"
+    loop
+    autoplay>
+  </lottie-player>
+</div>
+
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">What I focus on</h2>
+        <p class="section-lead reveal">Clean architecture, performance, and delightful user experience.</p>
+        <div class="cards">
+
+          <div class="card reveal">
+            <h3>Frontend</h3>
+            <p>Accessible, responsive interfaces with modern JavaScript, CSS, AngularJS and Web APIs.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Scalable Systems</h3>
+            <p>Reliable backends with Python/Node, REST APIs, Spring Boot, MySQL, and Firestore.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Mobile App Development</h3>
+            <p>Flutter apps from zero to fully functional applications.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Maintenance & Monitoring</h3>
+            <p>Continuous follow-up to keep deployed apps secure, stable, and performing well.</p>
+          </div>
+
         </div>
       </div>
     </section>
-
- <section class="section">
-  <div class="container">
-    <h2 class="reveal">What I focus on</h2>
-    <p class="section-lead reveal">Clean architecture, performance, and delightful user experience.</p>
-    <div class="cards">
-
-      <div class="card reveal">
-        <h3>Frontend</h3>
-        <p>Accessible, responsive interfaces with modern JavaScript, CSS, AngularJS and Web APIs.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Scalable Systems</h3>
-        <p>Reliable backends with Python/Node, REST APIs, Spring Boot, MySQL, and Firestore.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Mobile App Development</h3>
-        <p>Flutter apps from zero to fully functional applications.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Maintenance & Monitoring</h3>
-        <p>Continuous follow-up to keep deployed apps secure, stable, and performing well.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
   </main>
 
   <footer>
