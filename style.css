@@ -126,11 +126,13 @@ h1{
 .project:hover{ transform: translateY(-4px); border-color:#2f2f4a }
 .project .thumb {
   aspect-ratio: 16/9;
-  background:linear-gradient(90deg, rgba(103,232,249,.15), rgba(167,139,250,.15));
+  /* background:linear-gradient(90deg, rgba(103,232,249,.15), rgba(167,139,250,.15)); */
   display:flex;               /* flex instead of grid */
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  background: #ffffff;
+  
 }
 
 .project .thumb img {
@@ -139,6 +141,7 @@ h1{
   object-fit:cover;
   flex-shrink:0;              /* <-- Safari fix */
 }
+
 
 
 .project .body{
