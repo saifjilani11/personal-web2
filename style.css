@@ -221,7 +221,7 @@ textarea{ min-height:140px; resize: vertical }
 .contact-pic{
   width: clamp(240px, 30vw, 350px);   /* bigger */
   aspect-ratio: 1 / 1;                /* perfect circle */
-  border-radius: 50%;
+  border-radius: 0%;
   object-fit: cover;                   /* fill the circle */
   object-position: 50% 20%;            /* bias upward to avoid cutting the chin/forehead */
   box-shadow: 0 0 0 8px #ffffff;       /* clean white ring */
